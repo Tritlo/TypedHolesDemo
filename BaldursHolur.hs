@@ -37,8 +37,8 @@ h :: String
 h = show (_ (_ :: Show a => a))
 
 
--- data Showable :: Type where
---   Showable :: Show a => a -> Showable
+data Showable :: Type where
+  Showable :: Show a => a -> Showable
 
 
--- k2 = Showable _
+k2 = Showable _

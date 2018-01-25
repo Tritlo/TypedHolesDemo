@@ -21,15 +21,16 @@ updTest t = t &~ do
     -- Ok, so we want to update the value by one.
     -- _ 1 value
     -- Hmm. Nothing found. How about
-    value <<+= 1
+    _ value 1
     -- Ah, there we go. Yes of course, the
     -- <<+= operator was the one I was looking for,
     -- thanks!
+
+-- I don't know lens well enough to show more cool examples. Time to learn,
+-- I guess
 
 emptyTest :: Test
 emptyTest = Test 0
 
 main :: IO ()
 main =  print (updTest emptyTest)
-
--- 
