@@ -6,6 +6,7 @@ Build ghc from master and run on demo.hs, Baldursholur.hs and Main.hs
 
 - Go into the LensDemo directory
 - Clone https://github.com/hvr/head.hackage
+- run cabal update
 - run head.hackage/scripts update
 - run cabal new-build --allow-newer
 
