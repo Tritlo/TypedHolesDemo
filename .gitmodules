@@ -1,0 +1,3 @@
+[submodule "DCC"]
+	path = DCC
+	url = git@github.com:Tritlo/DCC.git
