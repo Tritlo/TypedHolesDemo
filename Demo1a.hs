@@ -1,4 +1,3 @@
--- {-# OPTIONS_GHC -funclutter-valid-substitutions #-}
 module LambdaDays where
 
 import Data.List
