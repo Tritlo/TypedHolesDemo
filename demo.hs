@@ -1,17 +1,19 @@
-module TypedHolesDemo where
-
-import Control.Monad (join)
-
+module Demo where
+import Control.Monad
+import Control.Applicative
 import Data.List hiding (concat, map)
-import Prelude hiding (sum, concat, map, ap)
+import Prelude hiding (sum, concat, map)
 import Data.Char (isUpper, isLower)
-
 
 -- Consider the function.
 -- We're wondering, how can we make this string into a list of string?
 
 -- f :: [String]
 -- f = _ "hello, world"
+
+
+-- main :: IO ()
+-- main = print $ take 10 f
 
 -- Let's try it!
 --
@@ -24,6 +26,9 @@ import Data.Char (isUpper, isLower)
 -- f :: [String]
 -- f = _a _b "hello, world"
 
+-- main :: IO () 
+-- main = return ()
+
 -- Oof, that was a bit slow, and way too much output. We can speed it up by
 -- passing -fno-sort-valid-substitutions, and then it won't put any work into
 -- sorting the output.
@@ -33,8 +38,8 @@ import Data.Char (isUpper, isLower)
 -- What functions can I use? And what functions can I use to change the list?
 
 -- Let's try it!
-f2 :: String
-f2 = _a (_b :: Char -> Bool) "hello, world"
+-- f2 :: String 
+-- f2 = _a (_b :: Char -> Bool) "hello, world"
 
 -- Aha! We can filter, takeWhile, dropWhile, we can sortOn and all kinds of
 -- things.
@@ -44,28 +49,28 @@ f2 = _a (_b :: Char -> Bool) "hello, world"
 -- the classic map function over a list. But how can we implement it?
 -- Let's try it!
 
--- map :: (a -> b) -> [a] -> [b]
--- map = _
+-- myMap :: (a -> b) -> [a] -> [b]
+-- myMap = _
 
 -- Aha! map can be written with fmap! But what about this?
 -- If I have a list of functions and a list of things, how can I get
 -- the result of applying those functions? Let's ask GHC with a hole
 
--- ap :: [a -> b] -> [a] -> [b]
--- ap = _
+-- applyFunctions :: [a -> b] -> [a] -> [b]
+-- applyFunctions = _
 
 -- We can use (<*>). Neat!
 -- How can we write concat with a more general function?
--- concat :: [[a]] -> [a]
--- concat = _
+-- concatenateLists :: [[a]] -> [a]
+-- concatenateLists = _
 
 -- Nice!
 -- What about sum?
 
--- sum :: [Integer] -> Integer
--- sum = _ (+) 0
+-- mySum :: [Integer] -> Integer
+-- mySum = _ (+) 0
 
--- And prod?
+--And prod?
 -- prod :: [Integer] -> Integer
 -- prod = foldl _ 1
 
