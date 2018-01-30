@@ -1,9 +1,13 @@
-{-# OPTIONS_GHC -fno-max-valid-substitutions #-}
+-- {-# OPTIONS_GHC -funclutter-valid-substitutions #-}
 -- Consider the following module
 module Main where
 
 -- We import everyones favorite library
 import Control.Lens
+
+-- We import this for nicer output, since it's use internally in Lens.
+import Control.Monad.State
+
 
 -- And we declare a very simple data type
 newtype Test = Test { _value :: Integer } deriving (Show)
@@ -18,7 +22,8 @@ value f (Test i) = Test <$> f i
 -- Let's try it!
 updTest :: Test -> Test
 updTest t = t &~ do
-    _ value 1
+    _a value (+1)  -- First version
+    _b value 1   -- Second version
 
 -- I don't know lens well enough to show more cool examples. Time to learn,
 -- I guess
