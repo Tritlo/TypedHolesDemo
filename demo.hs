@@ -33,8 +33,8 @@ import Data.Char (isUpper, isLower)
 -- What functions can I use? And what functions can I use to change the list?
 
 -- Let's try it!
--- f2 :: String
--- f2 = _a (_b :: Char -> Bool) "hello, world"
+f2 :: String
+f2 = _a (_b :: Char -> Bool) "hello, world"
 
 -- Aha! We can filter, takeWhile, dropWhile, we can sortOn and all kinds of
 -- things.
