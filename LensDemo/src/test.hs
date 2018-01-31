@@ -1,4 +1,4 @@
--- {-# OPTIONS_GHC -funclutter-valid-substitutions #-}
+{-# OPTIONS_GHC -funclutter-valid-substitutions #-}
 -- Consider the following module
 module Main where
 
